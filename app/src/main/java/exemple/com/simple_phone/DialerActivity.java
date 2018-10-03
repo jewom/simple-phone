@@ -27,6 +27,7 @@ public class DialerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dialer);
 
         phoneNumberInput = findViewById(R.id.phoneNumberInput);
+        // get Intent data (tel number)
         if (getIntent().getData() != null)
             phoneNumberInput.setText(getIntent().getData().getSchemeSpecificPart());
     }
@@ -70,7 +71,7 @@ public class DialerActivity extends AppCompatActivity {
     private void offerReplacingDefaultDialer() {
         TelecomManager systemService = this.getSystemService(TelecomManager.class);
         if (systemService != null && !systemService.getDefaultDialerPackage().equals(this.getPackageName())) {
-            startActivity((new Intent(ACTION_CHANGE_DEFAULT_DIALER)).putExtra(EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME, this.getPackageName()));
+        startActivity((new Intent(ACTION_CHANGE_DEFAULT_DIALER)).putExtra(EXTRA_CHANGE_DEFAULT_DIALER_PACKAGE_NAME, this.getPackageName()));
         }
     }
 }
