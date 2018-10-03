@@ -11,7 +11,6 @@ import android.telecom.TelecomManager;
 import android.widget.EditText;
 import java.util.ArrayList;
 
-
 import static android.Manifest.permission.CALL_PHONE;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import static android.telecom.TelecomManager.ACTION_CHANGE_DEFAULT_DIALER;
@@ -60,7 +59,7 @@ public class DialerActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         ArrayList<Integer> grantRes = new ArrayList<>();
-        // Add evry result to the array
+        // Add every result to the array
         for (Integer grantResult: grantResults) grantRes.add(grantResult);
 
         if (requestCode == REQUEST_PERMISSION && grantRes.contains(PERMISSION_GRANTED)) {
